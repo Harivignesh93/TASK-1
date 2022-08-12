@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./css/style.css">
+
+        
+    
+  
+    <style>
+        html {
+    font-family:italic;
+    }
+      
+        body {
+    width: 50%;
+    max-width: 800px;
+    min-width: 480px;
+    margin: 0 auto;
+    }
+    </style>
+</head>
+<body>
+    <div class="hari">
+<h1>Guess The Number</h1>
+</div>
+<p>
+    <B>
+See if you can guess it.
+</B>
+</p>
+<div class="form">
+    <label for="guessField">Enter a guess: </label>
+    <input type = "text" id = "guessField" class = "guessField"> //input for customer provided number
+   <br> <br><input type = "submit" value = "Submit guess" 
+           class = "guessSubmit" id = "submitguess">
+           <p id="result"> </p><br>
+           <br>
+</div>
+    <script type = "text/javascript">
+    var y = Math.floor(Math.random() * 100 + 1);
+    var guess = 1;
+         console.log(guess === 10, 'result')
+        var result = document.getElementById("result")
+    document.getElementById("submitguess").onclick = function(){
+   var x = document.getElementById("guessField").value;
+   if(x == y){    
+        console.log(guess)
+       result.textContent="CONGRATULATIONS!!! you got it "+ guess + " GUESS "
+   }
+   else if(x > y) {  
+       console.log(guess)
+       guess++;
+           console.log(guess, 'guess after counting 1')
+      result.textContent = "try small number"
+   }
+   else if(x < y){
+        console.log(guess)
+       guess++;
+       console.log(guess, 'guess after counting 1')
+      result.textContent = "try big number"
+   }  if(guess == 10) {
+       result.textContent = `Your try is over, please restart the game. Number is ${y}`
+   }
+}
+</script>
+</body>
+</html> 
